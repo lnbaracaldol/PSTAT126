@@ -1,0 +1,341 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\pagestyle{empty}
+\usepackage{color}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{palatino}
+\newcommand{\alert}[1]{\textcolor{red}{#1}}
+\def\UrlFont{\tt}
+
+
+\begin{document}
+\begin{center}
+
+
+
+{
+\LARGE { PSTAT 126: Regression Analysis}\\
+\normalsize {Summer 2023 }
+}
+
+\vspace{.3in}
+{\large{\bf Course Policies and Syllabus}}
+\vspace{.25in}
+\end{center}
+
+\vspace{0.1in}
+
+\noindent{\bf Course website:}  {\fontfamily{cmtt}\selectfont \url{https://ucsb.instructure.com/courses/13351}} 
+
+\vspace{0.1in}
+
+\begin{tabular}{l} 
+{\fontfamily{lmr}\selectfont\bf Instructor:} Laura Baracaldo     \\
+{\bf Email:}  {\fontfamily{cmtt}\selectfont lnbaracaldol@ucsb.edu} \\
+ {\bf Office Hours:} Wed 1:45-2:45pm. Old Gym 1201. \\
+ %\quad Zoom link: {\fontfamily{cmtt}\selectfont \url{https://ucsb.zoom.us/j/82985864110?pwd=ODZFMFhmZm0xbHZxKzRheStyZ09WUT09}} \\
+%\quad Meeting ID: 829 8586 4110\\
+%\quad Passcode: 091614\\
+\\
+{\fontfamily{lmr}\selectfont\bf TA:} Moya Xiong      \\
+{\bf Email:}  {\fontfamily{cmtt}\selectfont 
+moyaxiong@pstat.ucsb.edu}  \\
+ {\bf Office Hours:} TBD\\
+ \\ 
+
+
+\end{tabular}
+
+
+\vspace{.2in}
+
+\noindent
+\qquad {\fontfamily{lmr}\selectfont\bf Lecture:}   \quad  	MTWR 12:30- 1:35 BRDA 1640    
+
+\vspace{.15in}
+
+\noindent% TODO
+\qquad {\bf Sections:}
+\begin{tabular}{l c l l c}
+ {\bf Section \#}   &   {\bf Days}   & {\bf Time}   & {\bf Location} & {\bf TA}  \\ 
+     15339   &M W& 	 9:00- 9:50 am   & PHELP 1513 & 	Moya Xiong \\  
+     15347  & MW&   10:00-10:50 am	   & PHELP 1513  & 	Moya Xiong  \\   
+ 
+\end{tabular}
+
+
+\vspace{0.2in}
+
+\noindent{\bf Course Topics and Objectives:}
+
+\vspace{0.1in}
+
+\noindent This course introduces the theory and application of linear regression models. We will give a
+(non-exhaustive) introduction to linear models in an increasing order of complexity throughout
+this quarter. Topics may include simple and multiple regression models; estimation; inference;
+prediction; regression diagnostics; model selection; shrinkage methods; analysis of variance, and
+more if time allows. The course will be focused on the learning of computer package R to solve real-world problems.
+
+\vspace{0.1in}
+
+Upon completion of this course, a student should be able to:
+
+\vspace{0.1in}
+
+\begin{itemize}
+\item Explain the common regression techniques conceptually and characterize some of them
+mathematically;
+\item Describe and discuss the concepts, use cases, and properties of the linear model and many
+of its extensions;
+\item Be able to effectively use R for exploratory data analysis, model fitting, and visualization.
+\end{itemize}
+
+
+\vspace{0.1in}
+
+\noindent{\bf Course Material:}
+
+\begin{itemize}
+\item Lecture slides and labs will be available on {\em Canvas}. All the course material will be weekly posted in the {\em Modules} section as the quarter progresses. 
+\item Homework assignments and quizzes will also be given out on {\em Canvas}, and should be turned in on
+{\em Gradecope}. Other forms of submission will not be accepted.
+\item All Q\&A related to course content, homework assignments, R programming, and quizzes should
+be done on Nectir. 
+\end{itemize}
+
+\vspace{0.1in}
+
+
+
+\noindent{\bf Prerequisites:} PSTAT 10 and PSTAT 120B both with a minimum grade of C or better. This course
+heavily depends on matrix algebra (MATH 4A). Some familiarity with R is expected.
+
+\vspace{0.1in}
+
+\noindent{\bf References:} The lecture slides are self-contained. You may find the following textbooks helpful:
+
+\begin{itemize}
+\item Faraway, J. J. (2005),\textit{ Linear Models with R}, Chapman \& Hall.
+\item Weisberg, S. (2005),\textit{ Applied Linear Regression}, 3rd edition, Wiley.
+\end{itemize}
+
+\noindent{\bf R programming} 
+
+\vspace{0.1in}
+
+\noindent We will heavily use the {\fontfamily{cmtt}\selectfont R}  programming language ( {\fontfamily{cmtt}\selectfont \url{www.r-project.org}} ) throughout this course.
+Please set up your {\fontfamily{cmtt}\selectfont R}  environment, if you have not, as early as possible.
+
+\vspace{0.1in}
+
+\noindent Reading the following book (which is freely available online) is very helpful for quickly coming
+up to speed with {\fontfamily{cmtt}\selectfont R}.
+
+\begin{itemize}
+\item \textit{R for Data Science} by Grolemund and Wickham (available at:  \url{ https://r4ds.had.co.nz/index.html})
+\end{itemize}
+
+
+\vspace{0.1in}
+
+\noindent{\bf Course Grading:}
+
+\begin{itemize} 
+\item {\bf Homework} (40\%). 
+\begin{itemize}
+\item There will be 4 homework assignments, due approximately every 2 weeks. Each assignment
+will be worth the same amount.
+\item {\bf Homework solutions must be done using RMarkdown and turned in on Gradescope}.
+All code should be well documented. We have provided a homework
+template that you can use to get started. {\bf You MUST submit the R Markdown code ({\fontfamily{cmtt}\selectfont Rmd} file, template provided), the PDF generated and any additional file as needed}.
+\item Homework not submitted online before the deadline will be considered late (20\%
+deduction from the received assignment credit). 24 hours after the deadline homework
+will not be accepted and no credit will be awarded. Since internet service can be
+unreliable, you are encouraged to start and submit your assignments well in advance
+of the deadline.
+\item { \bf You may not copy or make use of solutions from the web, other students, or other
+sources.}
+\end{itemize}
+\item {\bf Quizzes} (20\%).
+\begin{itemize}
+\item There will be occasional quizzes given on Canvas. Each quiz will be worth the
+same amount.
+\item There is no make-up for missed quizzes.
+\end{itemize}
+\item {\bf Final exam}(40\%). 
+
+\end{itemize}
+
+\vspace{0.2in}
+
+
+
+\noindent {\bf Code of Academic Integrity}
+
+\vspace{0.1in}
+
+\noindent It is expected that you will adhere to the UCSB \textit{Student Conduct Code} at {\fontfamily{cmtt}\selectfont\url{http://studentconduct.sa.ucsb.edu/academic-integrity}}. In quizzes, homework assignments, and final project, you may not copy or make use of solutions from the web, other (groups of) students, or other sources.
+
+\vspace{0.1in}
+
+\noindent The course materials, including lecture slides, lecture recordings, quizzes, homework assignments,
+and similar materials, are protected by U.S. copyright law and by University policy. You
+may take notes and make copies of course materials for your own use. You may also share those
+materials with another student who is enrolled in or auditing this course. Do not reproduce,
+distribute or display (post/upload) course materials in any other way -- whether or not a fee is
+charged -- without the express prior written consent from the lecturer. To do so will result in a
+UCSB Honor Code investigation.
+
+\vspace{0.2in}
+
+\noindent{\bf Grade Appeals}
+
+\vspace{0.1in}
+
+\noindent Grade appeals must be made to your TA, in writing, no sooner than 24 hours after the assignment or exam is returned, and no later than 4 days after it is returned. Please provide written
+justification for your appeal and include the homework or exam in question, along with any
+relevant supplementary information.
+
+\vspace{0.1in}
+
+\noindent If you have a dispute with your TA over a grade you have received, you have the right to request
+a review by the professor. Please keep in mind, however, that an appeal will invoke a review of
+the full assignment and could result in an even lower grade.
+
+\vspace{0.2in}
+
+\noindent{\large \bf COVID-19 Health and Safety Requirement}
+
+\vspace{0.1in}
+
+\noindent Follow the policies and requirements listed at \url{https://www.ucsb.edu/COVID-19-information}.
+Non-compliance with COVID-19 health and safety requirements is a violation of the UCSB Student
+Code of Conduct.
+
+\vspace{0.2in}
+
+\noindent{\large \bf Links for Campus Resources}
+
+
+
+\begin{itemize}
+\item Office of Ombuds \url{https://ombuds.ucsb.edu} provides confidential consultation services to
+faculty, staff, students, parents, or anyone else with a campus-related concern.
+\item DSP. \url{https://dsp.ext-prod.sa.ucsb.edu}. Students that will need special assistance must contact me as soon as possible and have their Disabled Student Program Specialist send me a formal request.
+\end{itemize}
+
+
+
+
+
+
+%\noindent \underline{Please attend the first lab for orientation.} Subsequent lab attendance is NOT
+%required.
+\vspace{0.3in}
+
+
+
+
+
+
+
+\end{document}
+
+\noindent {\bf Lab Assignments:} Lab assignments will be completed,
+submitted, and reviewed in {\em Canvas}.  All lab assigments will be posted in the
+{\em Modules} section. Assignments will be comprised of {\em Canvas Quizzes} and {\em iMathAS} 
+question sets. Data files used in labs can be accessed in the {\em Modules} themselves, 
+but they are also available for download in the {\em Files} tab on {\em Canvas}.
+
+
+
+\noindent {\bf Late Work:} Late submissions will {\bf NOT} be accepted. The
+class accommodates missing Lab assignments by designating Labs 5 and 10 as
+extra credit (see {\bf Course Grade} section below). Therefore, instructors
+will adhere to a strict assignment submission policy. Complete the labs early
+in the week. Do not wait until the day the assignments are due! In cases of
+extenuating circumstances (typically requiring documentation, i.e. doctor's note), accommodating late work will be left at the
+discretion of the instructors. In such cases, email both instructors at least
+48 hours before the due date of the assignment.
+\vspace{0.2in}
+ 
+ 
+
+\newpage
+\noindent {\bf Schedule and Content List:}  \vspace{.05in}  \\ 
+\indent \begin{tabular}{| l | l |p{10cm}|} \hline
+Lab \# & Due Date & Content \\ \hline
+Lab 1 & 10/07, 9 am &Practice with Data Types, Starting JMP. \\ \hline
+Lab 2 & 10/14, 9 am & Looking at data. Measures of central tendency, Measures of dispersion. \\ \hline
+
+Lab 3 & 10/21, 9 am &Relative Frequency, Probability (including Bayes Theorem), Binomial and Poisson distribution.\\ \hline
+
+Lab 4 & 10/28, 9 am & Means of Normals, Central Limit Theorem, Normal Approximation to Binomial\\ \hline
+
+Lab 5 & 11/04, 9 am & EXTRA CREDIT. Review lab.\\ \hline
+
+Lab 6 & 11/11, 9 am &Confidence Intervals for Means, Confidence Intervals for Proportions.\\ \hline
+
+Lab 7 & 11/18, 9 am &One Sample Hypothesis Tests for Means, Hypothesis Tests for Proportions. Two-sample Tests for Means.\\ \hline
+
+Lab 8&  11/25, 9 am &Regression, Residuals and Transformations\\ \hline
+
+Lab 9& 12/02, 9 am & Multiple Regression, Goodness-of-Fit Tests\\ \hline
+
+Lab 10 & \textbf{12/09, 9 am} & EXTRA CREDIT. Polynomial Regression, Optimization.\\ \hline
+\end{tabular}
+
+\vspace{.3in}
+
+\noindent {\bf Course Grade:} Grades will be based on a point system. Each
+question within a required lab is worth one point. The total number of
+questions in the eight required labs is approximately 250, and the primary
+grade percentage will be calculated out of the total. Extra credit labs carry
+an additional 20\% total, more than enough to replace an entire missed lab.
+The final score (the raw percentage plus extra credit) will determine a
+student's letter grade: 90\% - 100\% is an A, 80\% - 89\% is a B, 70\% - 79\%
+is a C, 60\% - 69\% is a D, and 0 - 59\% is an F. Note that A+ will not be
+given for students who finish higher than 100\%. We will not round or bargain
+for scores that are borderline between different grade levels. \\
+
+\noindent {\bf DRC Accommodations:} The Disability Resources Center reduces barriers to inclusion and full participation for students
+with disabilities by providing support to individually determine reasonable academic
+accommodations. If you have questions or concerns about accommodations or any other
+disability-related matter, please contact the DRC office, located in Hahn 125 or at 831-459-2089
+or \href{mailto:drc@ucsc.edu}{drc@ucsc.edu}. \\
+
+\noindent {\bf Academic Dishonesty:} Academic integrity is the cornerstone of a university education. Academic dishonesty diminishes
+the university as an institution and all members of the university community. It tarnishes the
+value of a UCSC degree.
+
+All members of the UCSC community have an explicit responsibility to foster an environment of
+trust, honesty, fairness, respect, and responsibility. All members of the university community are
+expected to present as their original work only that which is truly their own. All members of the
+community are expected to report observed instances of cheating, plagiarism, and other forms
+of academic dishonesty in order to ensure that the integrity of scholarship is valued and
+preserved at UCSC.
+
+In the event a student is found in violation of the UCSC Academic Integrity policy, he or she may
+face both academic sanctions imposed by the instructor of record and disciplinary sanctions
+imposed either by the provost of his or her college or the Academic Tribunal convened to hear
+the case. Violations of the Academic Integrity policy can result in dismissal from the university
+and a permanent notation on a student’s transcript.
+
+For the full policy and disciplinary procedures on academic dishonesty, students and instructors
+should refer to the \href{https://www.ue.ucsc.edu/academic_misconduct}{Academic Integrity page} at the Division of Undergraduate Education. \\
+
+\noindent {\bf Title IX:} The university cherishes the free and open exchange of ideas and enlargement of knowledge.
+To maintain this freedom and openness requires objectivity, mutual trust, and confidence; it
+requires the absence of coercion, intimidation, or exploitation. The principal responsibility for
+maintaining these conditions must rest upon those members of the university community who
+exercise most authority and leadership: faculty, managers, and supervisors.
+The university has therefore instituted a number of measures designed to protect its community
+from sex discrimination, sexual harassment, sexual violence, and other related prohibited
+conduct. \href{https://titleix.ucsc.edu/}{Information about the Title IX Office}, the \href{https://ucsc-gme-advocate.symplicity.com/public_report/index.php/pid681212?}{online reporting link}, applicable campus
+\href{https://titleix.ucsc.edu/Resources\%20and\%20Options\%202.18.pdf}{resources}, reporting responsibilities, the \href{https://policy.ucop.edu/doc/4000385/SVSH}{UC Policy on Sexual Violence and Sexual Harassment}
+and the UC Santa Cruz Procedures for Reporting and Responding to Reports of Sexual
+Violence and Sexual Harassment can be found at \href{titleix.ucsc.edu}{titleix.ucsc.edu}.
+The Title IX/Sexual Harassment Office is located at 105 Kerr Hall. In addition to the \href{https://ucsc-gme-advocate.symplicity.com/public_report/index.php/pid681212?}{online
+reporting option}, you can contact the Title IX Office by calling 831-459-2462. 
